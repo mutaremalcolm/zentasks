@@ -43,8 +43,6 @@ export const FormInput = () => {
              >
                 Add item
              </button>
-           
-
         </form>
     )
 }
