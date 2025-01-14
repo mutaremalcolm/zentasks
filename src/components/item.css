@@ -16,11 +16,16 @@ li {
     }
 }
 
-::view-transition-new(.item):only-child {
+::view-transition-group(.item){
     animation-duration: 400ms;
 }
 
 /* Items get added */
 ::view-transition-new(.item):only-child {
+    animation-name: slide-in;
+}
+
+/* Item gets removed */
+::view-transition-old(.item):only-child {
     animation-name: slide-out;
 }
