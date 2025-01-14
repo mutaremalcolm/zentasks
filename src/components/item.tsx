@@ -9,7 +9,7 @@ import { useTodoDispatchContext } from './hooks/useDispatchContext';
 import { EDIT_TODO_DELAY } from '../lib/constants';
 import { cn } from '../lib/utils';
  
-import './Item.css'
+import './item.css'
 
 type ItemProps = {
     item: Todo
