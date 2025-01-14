@@ -1,10 +1,14 @@
 import { useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+import { useTodoDispatchContext } from './hooks/useDispatchContext';
+
 export const FormInput = () => {
     const [todoValue, setTodoValue] = useState('')
 
     const inputRef = useRef<HTMLInputElement>(null)
+
+    const dispatch = useTodoDispatchContext()
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -15,11 +19,11 @@ export const FormInput = () => {
             document.startViewTransition(() => {
                 flushSync(() => {
                     console.log('dispatching inside view transition')
-                    dispatchEvent({ type: 'ADD_TOTO', payload: {title: todoValue}})
+                    dispatch({ type: 'ADD_TODO', payload: {title: todoValue}})
                 })
             })
         }else {
-            dispatchEvent({ type: 'ADD_TODO', payload: { title: todoValue}})
+            dispatch({ type: 'ADD_TODO', payload: { title: todoValue}})
         }
 
         setTodoValue('')
