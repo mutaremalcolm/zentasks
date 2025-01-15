@@ -3,7 +3,7 @@ import { Pen, EllipsisVertical, Trash } from 'lucide-react';
 
 type MenubarProps = {
     onEdit: () => void
-    onDelete: () => void
+    onDelete: (event: React.MouseEvent) => void
 }
 
 export const Menubar = ({ onEdit, onDelete }: MenubarProps) => {

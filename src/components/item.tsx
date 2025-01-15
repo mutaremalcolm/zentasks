@@ -85,7 +85,7 @@ export const Item = ({ item }: ItemProps) => {
                 />
             ) : (
                 <p
-                    className={cn('text-base font-medium text-gray-800', {
+                    className={cn('text-base font-medium text-gray-800 flex-grow', {
                         'line-through': item.isCompleted
                     })}
                 >
